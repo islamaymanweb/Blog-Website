@@ -1,0 +1,29 @@
+﻿@model CommentViewModel
+
+@{
+
+}
+
+<style>
+    .post__comments {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .post__input {
+        flex: 1;
+        border: none;
+        padding: 10px;
+        border-top: 1px solid lightgray;
+    }
+</style>
+
+<div>
+    <form method="post" asp-controller="Post" asp-action="Comment" class="post__comments">
+        <input asp-for="PostId" type="hidden" />
+        <input asp-for="MainCommentId" type="hidden" />
+        <textarea class="form-control" asp-for="Message" placeholder="Add a comment..."></textarea>
+        <button class="post__button btn btn-outline-primary" type="submit">Submit</button>
+    </form>
+</div>
